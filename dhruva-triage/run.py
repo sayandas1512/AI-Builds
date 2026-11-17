@@ -12,14 +12,13 @@ import score
 
 def run(path):
     apps = loader.load(path)
-    best = 0
+    max_raw = len(config.CRITERIA)
     rows = []
     for app in apps:
         reply = llm.assess(app["id"], str(app))
         verdicts = reply["criteria"]
         raw = score.raw_score(verdicts)
-        best = max(best, raw)
-        fit = round(raw / best * 10, 1)
+        fit = round(raw / max_raw * 10, 1)
         gaps = score.missing(verdicts)
         term = guard.anti_thesis(app)
         rec = score.recommend(fit, len(gaps), term)
