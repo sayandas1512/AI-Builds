@@ -6,6 +6,7 @@ def load(path="data/applications.csv"):
     apps = []
     with open(path, newline="") as f:
         for row in csv.DictReader(f):
+            row = {k.strip(): v for k, v in row.items()}
             apps.append({
                 "id": row["id"],
                 "name": row["name"],
