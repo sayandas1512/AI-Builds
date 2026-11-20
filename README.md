@@ -1,6 +1,6 @@
 # ai-builds
 
-Practice repos for MESA PGP Term 2, Advanced AI. Each folder is a small AI pipeline you read, run offline and debug.
+Practice repos for advanced AI pipelines. Each folder is a small AI pipeline you read, run offline and debug.
 
 | Folder | Session | Task |
 |---|---|---|
